@@ -56,24 +56,26 @@
   <% end %>
 
 
+
+
+
+
+
 <%= yield %>
 </div>
+
+<footer id="page_footer">
+
+        <div id="social_links" class="split">
+          <a href="https://twitter.com/wordwraps" title="@wordwraps" id="twitter" class="social">Follow @wordwraps</a>
+          <a href="https://www.facebook.com/wordwraps" title="become a fan on facebook" id="facebook" class="social facebook">Become a fan</a>
+        </div><!-- /social_links -->
+      </div>
+       
+      </footer>
+
 
 </body>
 </html>
 
-
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "About", about_path %></li>
-      <li><%= link_to "Pins", pins_path %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <li><%= link_to "Sign In", new_user_session_path %></li>
-      <% end %> 
-    </ul>
-  </div><!-- /.navbar-collapse -->
 
