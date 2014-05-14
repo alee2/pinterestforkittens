@@ -5,7 +5,7 @@ Pinterestforkittens::Application.routes.draw do
  # get "page/index"
 
 get "/about" => "page#about"
-get "/home"  => "page#home"
+get "/store"  => "page#store"
 
   root "page#index"
   # The priority is based upon order of creation: first created -> highest priority.
