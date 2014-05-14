@@ -14,6 +14,9 @@
     <% @pins.each do |pin| %>
       <tr>
         <td><%= pin.description %></td>
+       <td><%= time_ago_in_words pin.created_at %></td>
+        <td><%= pin.user.try( :email ) %></td>
+
         <td><%= link_to 'Show', pin %></td>
         <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
         <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,3 +28,21 @@
 <br>
 
 <%= link_to 'New Pin', new_pin_path %>
+
+<% if !user_signed_in? %>
+<%= link_to 'New Pin', new_pin_path, class: "btn btn-primary btn-lg" %>
+
+
+
+<div class="jumbotron">
+  <h1>We all love kittens</h1>
+  <p>But I <i>just don't know</i> where to find them on the <b>internet</b>.</p>
+  <p>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+    <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary btn-lg" %>
+  </p>
+</div>
+<% end %>
+
+
+
