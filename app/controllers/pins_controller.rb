@@ -1,4 +1,5 @@
 class PinsController < ApplicationController
+ 
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
    before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
  before_action :correct_user, only: [:edit, :update, :destroy]
@@ -59,7 +60,9 @@ class PinsController < ApplicationController
   # DELETE /pins/1
   # DELETE /pins/1.json
   def destroy
+     @pin = Pin.find(params[:id])
     @pin.destroy
+
     respond_to do |format|
       format.html { redirect_to pins_url }
       format.json { head :no_content }
